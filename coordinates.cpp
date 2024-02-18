@@ -1,8 +1,5 @@
 #include "coordinates.h"
-#include "mythread.h"
-#include <QDebug>
 #include <QThread>
-#include <QRandomGenerator>
 
 void Coordinates::makeCoordinates()
 {

@@ -4,6 +4,9 @@
 #include <QObject>
 #include <QMutex>
 #include <QWaitCondition>
+#include <QRandomGenerator>
+#include <QDebug>
+#include <mythread.h>
 
 
 class Coordinates : public QObject

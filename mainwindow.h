@@ -3,7 +3,11 @@
 
 #include <QMainWindow>
 #include <QVector>
-#include "coordinates.h"
+#include <QDebug>
+#include <QThread>
+#include <coordinates.h>
+#include <mythread.h>
+#include <qcustomplot.h>
 
 namespace Ui {
 class MainWindow;
@@ -18,17 +22,15 @@ public:
     ~MainWindow();
     void addPoint(double x, double y);
     void clearData();
+    void plot();
     Coordinates *coord;
+    MyThread *thread;
 
 private slots:
     void on_pushBtnStart_clicked();
     void clearPlot();
-
-public slots:
-    void plot();
     void handleData(const double &x,const double &y);
-    void catchStop();
-    void catchClear();
+    void catchAction();
 
 private:
     Ui::MainWindow *ui;
